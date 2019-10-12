@@ -1,0 +1,1033 @@
+@charset "UTF-8";
+/* css reset*/
+html, body, div, span, object, iframe,h1, h2,
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+    outline-style:none;
+    font-family: "Microsoft YaHei","sans-serif";
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+}
+ul li{list-style: none}
+a:active, a:hover, a:visited, a:link{
+    text-decoration: none;
+}
+
+:focus{
+    outline: 0;
+}
+
+/*-----------conmon*/
+.container{
+    /*background: rgba(255, 192, 203, 0.16);*/
+}
+section{
+    padding: 50px 0;
+}
+section h2{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+section h2:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+section h2 span{
+    font-size: 30px;
+    color: #d43142;
+    margin: 0 20px;
+    float: left;
+}
+
+section h2 i.line{
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: #ccc;
+    float: left;
+    margin-right: 2px;
+}
+
+section h5{
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+.bg-gray{
+    background: #f5f5f5;
+}
+
+/*------------首页*/
+.home .banner .swiper-container{
+    width: 100%;
+    height: 468px;
+}
+.home .banner .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.home .banner .swiper-slide:nth-child(1){
+    background: url("/haowen_imgs/imgs/home-banner-item1.jpg") repeat center;
+}
+.home .banner .swiper-slide:nth-child(2){
+    background: url("/haowen_imgs/imgs/home-banner-item2.jpg") repeat center;
+}
+.home .banner .swiper-pagination-bullet-active{
+    background: #fff;
+}
+.home .banner .swiper-pagination-bullet{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+}
+
+.home .content section h2, .home .content section h5{
+    opacity:0;
+    animation:move 1s forwards;
+    animation-play-state:paused;
+}
+
+.home .content section.animate h2, .home .content section.animate h5{
+    animation-play-state:running;
+}
+
+.home .section1 .left{
+    width: 240px;
+    background: #f5f5f5;
+    padding: 0;
+    border-bottom: 5px solid #d43142;
+}
+
+.home .section1 .left .title{
+    height: 60px;
+    background: #d43142;
+    font-size: 24px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+}
+
+.home .section1 .left ul li{
+    height: 50px;
+    width: 200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home .section1 .left ul li.active{
+    color: #d43142;
+}
+
+.home .section1 .left ul li .glyphicon{
+    font-size: 16px;
+}
+
+.home .section1 .left .bottom{
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    color: #d43142;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home .section1 .left .bottom .circle{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background: #d43142;
+    margin-right: 8px;
+}
+
+.home .section1 .left .bottom .circle i {
+    color: #fff;
+    font-size: 16px;
+}
+
+.home .section1 .right {
+    padding: 0;
+    margin-left: 40px;
+    width: 858px;
+}
+.home .section1 .right ul{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.home .section1 .right ul li {
+    padding: 0;
+    width: 270px;
+    height: 227px;
+    position: relative;
+    overflow: hidden;
+}
+.home .section1 .right ul li img{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    transition: all ease-in-out .3s;
+}
+
+.home .section1 .right ul li img:hover{
+    transform: scale(1.1);
+}
+
+.home .section1 .right ul li p{
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    background: rgba(145, 145, 145, 0.62);
+    color: #fff;
+    text-align: center;
+}
+
+.home .section1 div.bg{
+    margin-top: 50px;
+    height: 578px;
+    background: url("/haowen_imgs/imgs/home_section1_bg.jpg") no-repeat center;
+    display: none;
+}
+
+.home .section2{
+    padding-bottom: 0;
+}
+.home .section2 .content .outer{
+    height: 360px;
+    border: 15px solid #333;
+    border-radius: 10px;
+    padding: 20px 0
+}
+
+.home .section2 .content .bottom{
+    height: 90px;
+    width: 30px;
+    margin: 0 auto;
+    background-color: #ddd; /* 不支持线性的时候显示 */
+    background-image: linear-gradient(to right, #ddd , #fff,#ddd);
+}
+
+.home .section2 .content .bottom .left{
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 0 0 0 10px;
+    left: -10px;
+    position: relative;
+}
+
+.home .section2 .content .bottom .right{
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 0 0 10px 0;
+    left: 30px;
+    top: -10px;
+    position: relative;
+}
+
+.home .section2 ul li p.img{
+    height: 180px;
+    overflow: hidden;
+}
+.home .section2 ul li img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.home .section2 ul li h3{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.home .section2 ul li p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: #999;
+}
+
+.home .section3 .content{
+    margin-top: 40px;
+}
+.home .section3 .swiper-container ul{
+    overflow: hidden;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.home .section3 .swiper-container ul li {
+    width: 200px;
+    height: 100px;
+    float: left;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .section3 .swiper-container ul li:last-child{
+    margin: 0;
+}
+
+.home .section3 .swiper-container ul li img{
+    max-width: 100%;
+}
+
+.home .section4 ul{
+
+}
+
+.home .section4 ul li{
+    float: left;
+    width: 150px;
+    position: relative;
+}
+
+.home .section4 ul li:last-child{
+    width: 80px;
+}
+
+.home .section4 ul li p.circle{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .section4 ul li p.circle:after{
+    display: block;
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    right: 5px;
+}
+
+.home .section4 ul li:last-child p.circle:after{
+    display: none;
+}
+
+.home .section4 ul li p.circle i {
+    font-size: 40px;
+    color: #666;
+}
+.home .section4 ul li h4 {
+    text-align: left;
+    padding-left: 10px;
+    margin: 20px 0;
+}
+
+@keyframes move{
+    from{
+        opacity:0;
+        transform: scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform: scale(1);
+    }
+}
+
+/*产品展示*/
+.product .banner{
+    height: 360px;
+    background: url(/haowen_imgs/imgs/contact_footer.jpg) no-repeat center;
+}
+
+.product .top_nav {
+    border-bottom: 1px solid #ccc;
+}
+.product ul.classify{
+    overflow: hidden;
+}
+
+.product .top_nav div.container{
+    position: relative;
+    padding: 0;
+}
+.display_show{
+    display: block;
+}
+.display_hide{
+    display: none;
+}
+.product .top_nav span {
+    width: 12.5%;
+    height: 4px;
+    background-color: #d43142;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+}
+
+.product ul.classify li {
+    float: left;
+    width: 12.5%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+    -webkit-transition: color .3s;
+    -moz-transition: color .3s;
+    -ms-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+}
+
+.product ul.classify li.active {
+    color: #d43142;
+    border-bottom-color: #d43142;
+}
+
+.product ul.detail{
+    overflow: hidden;
+}
+
+.product ul.detail li {
+    margin-bottom: 40px;
+}
+
+.product ul.detail li .img{
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product ul.detail li div:hover p{
+    opacity: 1;
+}
+
+.product ul.detail li div:hover i{
+    opacity: 1;
+}
+
+.product ul.detail li div:hover img{
+    transform: scale(1.05);
+}
+
+.product ul.detail li p.bg-gray{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 255px;
+    height: 200px;
+    background: rgba(0,0,0,0.3);
+    transition: all ease-in-out .3s;
+    opacity: 0;
+    z-index: 99;
+}
+
+.product ul.detail li img {
+    max-width: 100%;
+    transition: all ease-in-out .3s;
+}
+
+.product ul.detail li .img a {
+    display: block;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.product ul.detail li .img i {
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    top: 50%;
+    color: #fff;
+    font-size: 20px;
+    transition: all ease-in-out .3s;
+    opacity: 0;
+}
+
+.product ul.detail li a.link {
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    text-shadow: none;
+    transition: all ease-in-out .3s;
+    margin-bottom: 0;
+    padding: 20px;
+    color: #333;
+    display: block;
+}
+
+.product ul.detail li a.link:hover{
+    border-bottom-color: #d43142;
+    color: #d43142;
+}
+
+.product .pagination{
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
+}
+
+.product .pagination button{
+    display: inline-block;
+    padding: 9px 15px;
+    border: 1px solid #e4eaec;
+    background: #ffffff;
+    color: #333;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+.product .pagination .page{
+    overflow: hidden;
+    float: left;
+}
+.product .pagination .page li {
+    padding: 9px 15px;
+    border: 1px solid #e4eaec;
+    border-right: none;
+    background: #ffffff;
+    text-align: center;
+    color: #333;
+    float: left;
+    cursor: pointer;
+}
+
+.product .pagination .page li.active{
+    background: #d43142;
+    color: #fff;
+}
+
+.product-detail .banner{
+    height: 360px;
+    background: url("/haowen_imgs/imgs/contact_footer.jpg") no-repeat center;
+}
+
+.product-detail .detail .right h3{
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.product-detail .detail .right p {
+    line-height: 25px;
+    color: #999;
+}
+
+.product-detail .detail .right .btn-group{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-detail .detail .right .btn-group button{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #999999;
+    border:1px solid #f0f2f5;
+    padding: 12px 20px;
+    background: none;
+    border-radius: 3px;
+    transition: all ease-in-out .3s;
+}
+
+.product-detail .detail .right .btn-group button:hover{
+    border-color: #d43142;
+    color: #d43142;
+}
+
+.product-detail .breadcrumb a {
+    color: #999;
+}
+
+.product-detail .recommend .right{
+    background: #fff;
+    padding: 30px;
+}
+
+.product-detail .recommend .right img{
+    max-width: 90%;
+}
+.product-detail .recommend .left .content{
+    position: relative;
+    padding: 30px;
+    background: #fff;
+    height: 600px;
+    margin-right: 30px;
+}
+
+.product-detail .recommend .left ul{
+    margin-top: 20px;
+}
+
+.product-detail .recommend .left li{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.product-detail .recommend .left li:hover h4{
+    color: #d43142;
+}
+
+.product-detail .recommend .left li img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.product-detail .recommend .left li h4{
+    text-align: center  ;
+    line-height: 30px;
+    transition: all ease-in-out .3s;
+}
+
+.product-detail .recommend .left li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+    /*联系我们*/
+.contact .banner{
+    height: 360px;
+    background: url("/haowen_imgs/imgs/contact_footer.jpg") no-repeat center;
+}
+.contact #map{
+    height: 500px;
+}
+
+/*---------------header*/
+.navbar-default{
+    background: none;
+    border: none;
+}
+.navbar-nav{
+    float: right;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    background: none;
+    border-bottom: 2px solid #00c1e0;
+    color: #00c1e0;
+}
+.navbar-nav>li{
+    width: 120px;
+    text-align: center;
+}
+.navbar{
+    margin-bottom: 0;
+}
+.navbar-default .navbar-brand{
+    color: #666;
+    font-weight: bold;
+}
+
+.nav-pc .top .brand:before{
+    display: block;
+    float: left;
+    margin-right: 20px;
+    content: '';
+    background: url("/haowen_imgs/imgs/logo.png");
+    width: 60px;
+    height: 100px;
+}
+.nav-pc .top .brand h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d43142;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.nav-pc .top .brand p{
+    color: #d43142;
+    font-size: 12px;
+}
+.nav-pc .top{
+    height: 100px;
+    background-color: #f5f5f5;
+}
+.nav-pc .top .brand{
+    float: left;
+    width: 500px;
+    height: 100px;
+}
+
+.nav-pc .top .middle{
+    text-align: center;
+    float: left;
+    margin: 0 20px;
+}
+
+.nav-pc .top .middle h3{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 25px 0 10px;
+}
+
+.nav-pc .top .middle h5{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav-pc .top .right{
+    float: right;
+    line-height: 100px;
+    font-size: 28px;
+    color: #d43142;
+}
+
+.nav-pc .top .right .circle{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    background: #d43142;
+    margin-right: 10px;
+}
+
+.nav-pc .top .right .circle i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.nav-pc .menu {
+    height: 70px;
+}
+.nav-pc .menu ul {
+    height: 70px;
+    text-align: center;
+}
+
+.nav-pc .menu ul li {
+    height: 100%;
+    padding: 0;
+}
+
+.nav-pc .menu ul li a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    position: relative;
+}
+
+.nav-pc .menu ul li a:after{
+    display: block;
+    content: '';
+    width: 1px;
+    height: 40px;
+    top: 17px;
+    position: absolute;
+    right: 0;
+    border-right: 1px solid #ccc;
+}
+
+.nav-pc .menu ul li:last-child a:after{
+    border-right: 0;
+}
+
+.nav-pc .menu ul li h4 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 3px;
+    transition: all ease-in-out .3s;
+}
+.nav-pc .menu ul li div{
+    color: #999;
+    font-size: 12px;
+    transition: all ease-in-out .3s;
+}
+
+.nav-pc .menu ul li:hover h4,.nav-pc .menu ul li:hover div{
+    color: #d43142;
+}
+
+.nav-pc .menu ul li.active h4, .nav-pc .menu ul li.active div{
+    color: #d43142;
+}
+
+
+    /*---------------footer*/
+footer {
+    padding: 50px 0 30px;
+    color: #B4B4B4;
+    line-height: 20px;
+    background: #333;
+}
+footer ul:after{
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+footer h3{
+    color: rgb(203, 203, 203);
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+footer h5{
+
+}
+footer ul li p {
+    line-height: 30px;
+    color: #B4B4B4;
+}
+
+footer ul li:first-child .left{
+    top: -20px;
+    position: relative;
+}
+footer ul li:first-child .top .right{
+    margin-left: 10px;
+}
+footer ul li:first-child .phone{
+    padding-left: 70px;
+    font-size: 24px;
+    overflow: hidden;
+    line-height: 40px;
+    top: -20px;
+    position: relative;
+}
+footer ul li:first-child .phone span{
+    width: 30px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 10px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #B4B4B4;
+}
+footer ul li:first-child .phone span i {
+    font-size: 16px;
+    font-weight: bold;
+}
+footer ul li:last-child{
+    top: 10px;
+    position: relative;
+}
+footer ul li:last-child div{
+    width: 120px;
+    text-align: center;
+    float: right;
+}
+footer .copyright{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #B4B4B4;
+}
+footer .copyright .left{
+    padding-right: 40px;
+}
+footer .copyright .left a{
+    color: #B4B4B4;
+    margin-right: 5px;
+}
+
+footer .copyright .left a:after{
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 13px;
+    padding-left: 10px;
+    top: 2px;
+    position: relative;
+    border-right: 1px solid #B4B4B4;
+}
+
+footer .copyright .left a:hover{
+    color: #fff;
+}
+
+footer .copyright .right{
+    text-align: right;
+}
+.float-left{
+    float: left;
+}
+
+/*-------------移动端自适应*/
+@media screen and (min-width: 768px) {
+    .nav-mobile{
+        display: none;
+    }
+    .nav-pc{
+        display: block;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav-mobile{
+        display: block;
+    }
+    .nav-pc{
+        display: none;
+    }
+    .navbar-nav, .navbar-nav>li{
+        width: 100%;
+    }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+        border-bottom: none;
+    }
+    footer ul li{
+        text-align: center;
+    }
+    footer ul li:last-child{
+        text-align: center;
+        top: 30px;
+    }
+    footer ul li:last-child div{
+        float: none;
+        margin: 20px auto;
+    }
+    footer .copyright .left{
+        display: none;
+    }
+    footer .copyright .right{
+        width: 100%;
+        text-align: center;
+    }
+    footer ul li:first-child .phone{
+        padding-left: 0;
+        text-align: center;
+        width: 210px;
+        margin: 20px auto;
+        top: 0;
+    }
+    footer ul li:first-child .top{
+        width: 290px;
+        margin: 0 auto;
+    }
+    footer ul li:first-child .left{
+        float: none;
+    }
+    footer ul li:first-child .top .right{
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-default .navbar-brand{
+        font-weight: normal;
+    }
+
+    /*首页*/
+    .home .section1 .left{
+        width: 100%;
+    }
+    .home .section1 .right{
+        margin-left: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .home .section1 .right ul{
+        display: block;
+    }
+    .home .section1 .right ul li{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .home .section1 div.bg{
+        display: none;
+    }
+    .home .section2 .content .outer{
+        height: auto;
+    }
+    .home .section2 ul li {
+        margin-bottom: 15px;
+    }
+    section h2 span{
+        text-align: center;
+    }
+    .home .section4 ul li{
+        float: none;
+        width: 140px;
+        margin: 0 auto;
+    }
+    .home .section4 ul li p.circle:after {
+        display: block;
+        content: '';
+        width: 1px;
+        height: 50px;
+        background: #ccc;
+        position: absolute;
+        left: 40px;
+        top: 82px;
+    }
+    .home .section4 ul li h4 {
+        text-align: left;
+        padding-left: 51px;
+        margin: 20px 0;
+    }
+    .home .section4 ul li:last-child{
+        width: 140px;
+    }
+}
