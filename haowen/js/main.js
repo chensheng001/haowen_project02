@@ -16,7 +16,7 @@ $(function () {
       } else if (url.includes('product')) {
         $('.navbar-nav li').eq(1).addClass('active');
         $('.nav-pc .menu ul li').eq(1).addClass('active');
-      } else if (url.includes('cases')) {
+      } else if (url.includes('case')) {
         $('.navbar-nav li').eq(2).addClass('active');
         $('.nav-pc .menu ul li').eq(2).addClass('active');
       } else if (url.includes('news')) {
@@ -32,4 +32,31 @@ $(function () {
     }, 100);
   }
 
+
+  /*通用动画*/
+  let winHeight,winScrollTop,currentScrollTop;
+  winHeight=$(window).height();
+  $(".commonListStyle ul li").eq(0).addClass("animate");
+  $(window).scroll(function(){
+    winScrollTop=$(this).scrollTop();
+    $(".commonListStyle ul li").each(function(){
+      currentScrollTop=$(this).offset().top;
+      if(winHeight+winScrollTop >= currentScrollTop){
+        $(this).addClass("animate");
+      }
+      else{
+        $(this).removeClass("animate");
+      }
+    });
+    /*产品展示动画*/
+    $(".product ul.detail li").each(function(){
+      currentScrollTop=$(this).offset().top;
+      if(winHeight+winScrollTop >= currentScrollTop){
+        $(this).addClass("animate");
+      }
+      else{
+        $(this).removeClass("animate");
+      }
+    });
+  });
 });
