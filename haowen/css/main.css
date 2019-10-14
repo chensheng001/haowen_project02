@@ -401,6 +401,7 @@ footer .copyright .right{
     color: #666;
     line-height: 25px;
     margin-bottom: 20px;
+    text-indent: 30px;
 }
 
 .commonListDetail .bottom .img{
@@ -461,6 +462,11 @@ footer .copyright .right{
     color: #828282;
     line-height: 25px;
     margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .commonListStyle ul.list li .text span,i{
@@ -800,6 +806,11 @@ section h5{
     color: #999999;
     margin: 20px 0;
     text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .home .section1 .bottom ul li a{
@@ -818,6 +829,11 @@ section h5{
 
 .home .section1 .bottom ul li a:hover i{
     color: #fff;
+}
+
+.home .section1 .bottom ul li img{
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .home .section2 .content{
@@ -1446,7 +1462,7 @@ section h5{
 .about section ul li.info h1{
     font-size: 18px;
     font-weight: bold;
-    color: #d43142;
+    color: #333;
     margin-bottom: 40px;
 }
 
@@ -1488,7 +1504,7 @@ section h5{
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 50px;
-    color: #d43142;
+    color: #333;
 }
 
 .contact .content ul li {
