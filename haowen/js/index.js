@@ -14,4 +14,59 @@ $(function () {
       }
     });
   });
+
+  /*首页轮播*/
+  let swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      clickable :true,
+    },
+    speed: 1000,
+    autoplay : {
+      delay:3000
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  /*客户案例*/
+  if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    var swiper2 = new Swiper('.swiper-container-section2', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  } else {
+    var swiper2 = new Swiper('.swiper-container-section2', {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  $('.home .section1 .top ul li').hover(function () {
+    const _index = $(this).index();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.home .section1 .bottom ul li').eq(_index).addClass('active').siblings().removeClass('active');
+  })
 });

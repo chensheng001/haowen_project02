@@ -69,7 +69,7 @@ a:active, a:hover, a:visited, a:link{
     margin-bottom: 5px;
 }
 .nav-pc .top .brand p{
-    color: #d43142;
+    color: #999;
     font-size: 12px;
 }
 .nav-pc .top{
@@ -90,42 +90,46 @@ a:active, a:hover, a:visited, a:link{
 
 .nav-pc .top .middle h3{
     font-size: 24px;
-    font-weight: bold;
     margin: 25px 0 10px;
 }
 
 .nav-pc .top .middle h5{
     font-size: 14px;
-    font-weight: bold;
 }
 
 .nav-pc .top .right{
     float: right;
-    line-height: 100px;
-    font-size: 28px;
-    color: #d43142;
 }
 
-.nav-pc .top .right .circle{
-    float: left;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    background: #d43142;
-    margin-right: 10px;
-}
-
-.nav-pc .top .right .circle i {
-    color: #fff;
+.nav-pc .top .right .contact-index{
     font-size: 20px;
+    margin-bottom: 0;
+    color: #333;
+    text-align: right;
+    line-height: 30px;
+    margin-top: 25px;
+}
+.nav-pc .top .right .contact-index p {
+    margin: 0;
+    line-height: 25px;
+}
+.nav-pc .top .right .contact-index i {
+    font-size: 20px;
+    color: #333;
+    border-right: 1px solid #333;
+    padding-right: 10px;
+    top: 5px;
+    position: relative;
+}
+
+.nav-pc .top .right .contact-index .mail{
+    color: #999;
 }
 
 .nav-pc .menu {
     height: 70px;
+    position: sticky;
+    top: 100px;
 }
 .nav-pc .menu ul {
     height: 70px;
@@ -543,7 +547,7 @@ section h5{
     margin-bottom: 20px;
 }
 .bg-gray{
-    background: #f5f5f5;
+    background: #f0f2f5;
 }
 
 /*------------首页*/
@@ -702,9 +706,163 @@ section h5{
     display: none;
 }
 
-.home .section2{
-    padding-bottom: 0;
+.home .section1 .top{
+    border-bottom: 1px solid #e0e0e0;
 }
+.home .section1 .top ul{
+    overflow: hidden;
+}
+.home .section1 .top ul li{
+    float: left;
+    display: block;
+    position: relative;
+    margin-bottom: 0;
+    cursor: pointer;
+    padding: 0 0 30px;
+    width: 14.28%;
+    text-align: center;
+}
+
+.home .section1 .top ul li i{
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 50px;
+    color: rgb(191, 191, 191);
+    display: block;
+    margin: 0 auto;
+}
+
+.home .section1 .top ul li h4{
+    color: rgb(191, 191, 191);
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    margin: 0;
+}
+
+.home .section1 .top ul li.active i,.home .section1 .top ul li.active h4{
+    color: #d43142;
+}
+
+.home .section1 .top ul li:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgb(209, 209, 209);
+    transition: all 0.5s ease 0s;
+}
+
+.home .section1 .top ul li.active:after{
+    bottom: 0;
+}
+
+.home .section1 .bottom ul{
+    overflow: hidden;
+    margin-top: 40px;
+}
+.home .section1 .bottom ul li{
+    display: none;
+}
+
+.home .section1 .bottom ul li.active{
+    display: block;
+}
+
+.home .section1 .bottom ul li div{
+    animation: moveFromLeftToRight 1s forwards;
+}
+
+.home .section1 .bottom ul li div:nth-child(2){
+    animation: moveFromRightToLeft 1s forwards;
+}
+
+.home .section1 .bottom ul li h3{
+    display: block;
+    font-size: 20px;
+    color: #333333;
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+}
+
+.home .section1 .bottom ul li p{
+    font-size: 14px;
+    line-height: 26px;
+    color: #999999;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.home .section1 .bottom ul li a{
+    color: #333;
+    border-color: #ddd;
+}
+
+.home .section1 .bottom ul li a i{
+    transition: all ease-in-out .3s;
+}
+
+.home .section1 .bottom ul li a:hover{
+    background: #d43142;
+    color: #fff;
+}
+
+.home .section1 .bottom ul li a:hover i{
+    color: #fff;
+}
+
+.home .section2 .content{
+    height: 380px;
+    overflow: hidden;
+    position: relative;
+}
+.home .section2 .swiper-container-section2 {
+    width: 100%;
+    height: 100%;
+}
+.home .section2 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    transition: 300ms;
+    transform: scale(0.8);
+}
+.home .section2 .swiper-slide-active,.home .section2 .swiper-slide-duplicate-active{
+    transform: scale(1);
+}
+
+.home .section2 .swiper-slide a{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.home .section2 .swiper-slide h3{
+    margin: 20px;
+    font-size: 18px;
+    color: #333;
+}
+.home .section2 .swiper-slide p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: #999;
+    padding: 0 15px;
+}
+
+
 .home .section2 .content .outer{
     height: 360px;
     border: 15px solid #333;
@@ -843,7 +1001,85 @@ section h5{
     margin: 20px 0;
 }
 
-/*产品展示*/
+.home .section5 .content{
+    margin-top: 40px;
+}
+
+.home .section5 .content ul li{
+    margin-bottom: 40px;
+}
+
+.home .section5 .content ul li .date{
+    color: #999;
+    line-height: 30px;
+}
+
+.home .section5 .content ul li a {
+    display: block;
+    width: 100%;
+    color: #333;
+    transition: all ease-in-out .3s;
+    padding-bottom: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+.home .section5 .content ul li .line{
+    height: 2px;
+    width: 50px;
+    background: #d43142;
+    transition: all ease-in-out .3s;
+    top: -1px;
+    position: relative;
+}
+
+.home .section5 .content ul li .detail:hover a{
+    color: #d43142;
+}
+
+.home .section5 .content ul li .detail:hover .line{
+    width: 100%;
+}
+
+.home .section5 .content ul{
+    overflow: hidden;
+}
+.home .section5 .content ul li .info{
+    line-height: 25px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.home .section5 .link{
+    text-align: center;
+}
+
+.home .section5 .link a{
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+    border-radius: 2px;
+    transition: all ease-in-out .3s;
+}
+
+.home .section5 .link a i{
+    color: #333;
+    transition: all ease-in-out .3s;
+    margin-left: 10px;
+}
+.home .section5 .link a:hover{
+    background: #d43142;
+    color: #fff;
+}
+.home .section5 .link a:hover i{
+    color: #fff;
+}
+
+    /*产品展示*/
 .product .banner{
     height: 360px;
     background: url(/haowen_imgs/imgs/contact_footer.jpg) no-repeat center;
@@ -1192,16 +1428,73 @@ section h5{
     height: 360px;
     background: url("/haowen_imgs/imgs/contact_footer.jpg") no-repeat center;
 }
-    /*联系我们*/
+
+/*关于我们*/
+.about .banner{
+    height: 360px;
+    background: url("/haowen_imgs/imgs/contact_footer.jpg") no-repeat center;
+}
+
+.about section ul li {
+    overflow: hidden;
+}
+
+.about section ul li.info{
+    margin-bottom: 40px;
+}
+
+.about section ul li.info h1{
+    font-size: 18px;
+    font-weight: bold;
+    color: #d43142;
+    margin-bottom: 40px;
+}
+
+.about section ul li.info .left{
+    padding: 0;
+}
+
+.about section ul li.info .left .content{
+    margin-right: 40px;
+}
+
+.about section ul li h4{
+    font-size: 16px;
+    font-weight: bold;
+    color: #d43142;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f2f5;
+    text-align: left;
+    line-height: 40px;
+}
+
+.about section ul li p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 25px;
+}
+
+
+/*联系我们*/
 .contact .banner{
     height: 360px;
     background: url("/haowen_imgs/imgs/contact_footer.jpg") no-repeat center;
 }
 .contact #map{
-    height: 500px;
+    height: 400px;
 }
 
+.contact h1{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #d43142;
+}
 
+.contact .content ul li {
+    color: #999;
+    line-height: 40px;
+}
 
 /*-------------移动端自适应*/
 @media screen and (min-width: 768px) {
@@ -1332,11 +1625,105 @@ section h5{
     .home .section4 ul li:last-child{
         width: 140px;
     }
+
+    .home .section1 .top ul{
+        display: none;
+    }
+    .home .section1 .bottom ul li{
+        display: block;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #ccc;
+    }
+    .home .section1 .bottom ul li div:nth-child(2){
+        margin-top: 40px;
+        text-align: center;
+    }
+    .home .section2 .swiper-slide a{
+        padding-top: 20px;
+    }
+    .product-detail .recommend .container .left{
+        padding: 0;
+        margin-top: 30px;
+    }
+    .product-detail .recommend .left .content{
+        height: auto;
+        margin-right: 0;
+    }
+    .product-detail .recommend .container{
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+    }
+    .product-detail .recommend .container .right{
+        -webkit-order: -1;
+        order: -1;
+    }
+    .case .content section{
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+    }
+    .case .content .right{
+        -webkit-order: -1;
+        order: -1;
+    }
+    .case .content .right ul.list li:before{
+        float: none;
+        margin: 0 auto 20px;
+    }
+    .case .content .right ul.list li .text{
+        padding-left: 0;
+        float: right;
+    }
+    .case .content .left{
+        padding: 0;
+    }
+    .case .content .left .detail{
+        margin: 30px auto 0;
+        width: 100%;
+        height: auto;
+    }
+    .commonLeftToRight section{
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+    }
+    .commonLeftToRight section .right{
+        -webkit-order: -1;
+        order: -1;
+    }
+    .commonLeftToRight section .left{
+        margin: 30px auto 0;
+        padding: 0;
+        width: 100%;
+    }
+    .commonLeftToRight .left .detail{
+        width: 100%;
+        height: auto;
+    }
+    .commonListDetail .btn-group{
+        flex-direction: column;
+    }
+    .commonListDetail .btn-group a{
+        margin-top: 20px;
+    }
+    .about section ul li.info .left .content{
+        margin: 0;
+        text-align: center;
+    }
+    .about section ul li.info h1{
+        margin: 20px 0;
+        text-align: center;
+    }
+    .contact h1{
+        margin: 20px 0;
+        text-align: center;
+    }
 }
 
 
 /*css 动画效果*/
-
 .home .content section h2, .home .content section h5{
     opacity:0;
     animation:fadeIn 1s forwards;
@@ -1347,8 +1734,22 @@ section h5{
     animation-play-state:running;
 }
 
+.home .section5 .content ul li{
+    animation:moveFromLeftToRight 1s forwards;
+    animation-play-state:paused;
+}
+
+.home .section5 .content ul li:nth-child(2n){
+    animation:moveFromRightToLeft 1s forwards;
+    animation-play-state:paused;
+}
+
+.home .section5 .content ul li.animate{
+    animation-play-state:running;
+}
+
 .commonListStyle ul li{
-    animation:moveFormBottomToTop 1s forwards;
+    animation:moveFromBottomToTop 1s forwards;
     animation-play-state:paused;
 }
 
@@ -1357,12 +1758,12 @@ section h5{
 }
 
 .product ul.detail li{
-    animation:moveFormRightToLeft 1s forwards;
     animation-play-state:paused;
 }
 
 .product ul.detail li.animate{
     animation-play-state:running;
+    animation:moveFromRightToLeft 1s forwards;
 }
 
 @keyframes fadeIn{
@@ -1376,7 +1777,7 @@ section h5{
     }
 }
 
-@keyframes moveFormBottomToTop {
+@keyframes moveFromBottomToTop {
     from{
         transform: translateY(20px);
     }
@@ -1385,9 +1786,20 @@ section h5{
     }
 }
 
-@keyframes moveFormRightToLeft {
+@keyframes moveFromRightToLeft {
     from{
         transform: translateX(20px);
+        opacity: 0.5;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveFromLeftToRight {
+    from{
+        transform: translateX(-20px);
         opacity: 0.5;
     }
     to{

@@ -61,6 +61,11 @@
             color: #f4ad1d;
             border-bottom: 2px solid #f4ad1d;
         }
+        .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+            color: #f4ad1d;
+            border: 0;
+            border-bottom: 2px solid #f4ad1d;
+        }
 
     </style>
 </head>
@@ -154,14 +159,16 @@
                     </ul>
                     <article class="tab-content">
                         <section class="tab-pane met-editor clearfix animation-fade active" id="product-content0" aria-expanded="true">
-                            <p><img src="https://images.mituo.cn/mui040/upload/201802/1519371146.jpg" data-width="760" width="760" data-height="460" height="460" style="" alt=""></p>
-                            <p><img src="/haowen_imgs/imgs/cases/case01/show.jpg" data-width="760" width="760" data-height="460" height="460" style="" alt=""></p>
-                            <p><img src="/haowen_imgs/imgs/cases/case01/show.jpg" data-width="760" width="760" data-height="460" height="460" title="广告印刷|图文印刷" alt="广告印刷|图文印刷"></p>                                </section>
+                            <p><img src="https://images.mituo.cn/mui040/upload/201802/1519371146.jpg" ></p>
+                            <p><img src="/haowen_imgs/imgs/cases/case01/show.jpg" alt=""></p>
+                            <p><img src="/haowen_imgs/imgs/cases/case01/show.jpg" ></p>                                </section>
 
                         <section class="tab-pane met-editor clearfix animation-fade" id="product-content1" aria-expanded="false">
+                            参数。。。
                         </section>
 
                         <section class="tab-pane met-editor clearfix animation-fade" id="product-content2" aria-expanded="false">
+                            包装。。。
                         </section>
                         <div class="tag">
                             <span></span>
@@ -191,6 +198,9 @@
       swiper: galleryThumbs
     }
   });
+  $('.nav-tabs .nav-item').click(function () {
+    $(this).siblings().find('a').removeClass('active');
+  })
 </script>
 </body>
 </html>

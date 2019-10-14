@@ -49,7 +49,18 @@ $(function () {
       }
     });
     /*产品展示动画*/
-    $(".product ul.detail li").each(function(){
+    /*$(".product ul.detail li").each(function(){
+      currentScrollTop=$(this).offset().top;
+      if(winHeight+winScrollTop >= currentScrollTop){
+        $(this).addClass("animate");
+      }
+      else{
+        $(this).removeClass("animate");
+      }
+    });*/
+
+    /*首页新闻块动画*/
+    $(".home .section5 .content ul li").each(function(){
       currentScrollTop=$(this).offset().top;
       if(winHeight+winScrollTop >= currentScrollTop){
         $(this).addClass("animate");
