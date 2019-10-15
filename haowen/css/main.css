@@ -243,6 +243,7 @@ footer ul li:first-child .phone span{
 footer ul li:first-child .phone span i {
     font-size: 16px;
     font-weight: bold;
+    margin: 0;
 }
 footer ul li:last-child{
     top: 10px;
