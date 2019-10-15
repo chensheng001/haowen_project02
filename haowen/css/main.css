@@ -737,6 +737,7 @@ section h5{
     color: rgb(191, 191, 191);
     display: block;
     margin: 0 auto;
+    transition: all ease-in-out .3s;
 }
 
 .home .section1 .top ul li h4{
@@ -771,9 +772,14 @@ section h5{
     bottom: 0;
 }
 
+.home .section1 .bottom{
+    min-height: 300px;
+    height: 350px;
+    background: url("/haowen_imgs/imgs/home/bg-product.jpg") no-repeat center;
+}
 .home .section1 .bottom ul{
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 .home .section1 .bottom ul li{
     display: none;
@@ -1010,6 +1016,7 @@ section h5{
 .home .section4 ul li p.circle i {
     font-size: 40px;
     color: #666;
+    margin: 0;
 }
 .home .section4 ul li h4 {
     text-align: left;
@@ -1097,8 +1104,8 @@ section h5{
 
     /*产品展示*/
 .product .banner{
-    height: 360px;
-    background: url(/haowen_imgs/imgs/contact_footer.jpg) no-repeat center;
+    height: 400px;
+    background: url(/haowen_imgs/imgs/product/banner.jpg) no-repeat center;
 }
 
 .product .top_nav {
@@ -1395,6 +1402,22 @@ section h5{
     background-size: 100%;
 }
 
+.case .content .right ul.list li:nth-child(2):before{
+    background-image: url("/haowen_imgs/imgs/cases/case02/show.jpg");
+}
+
+.case .content .right ul.list li:nth-child(3):before{
+    background-image: url("/haowen_imgs/imgs/cases/case03/show.jpg");
+}
+
+.case .content .right ul.list li:nth-child(4):before{
+    background-image: url("/haowen_imgs/imgs/cases/case04/show.jpg");
+}
+
+.case .content .right ul.list li:nth-child(5):before{
+    background-image: url("/haowen_imgs/imgs/cases/case05/show.jpg");
+}
+
 .case .content .right ul.list li h4 a{
     display: block;
     color: #37474f;
@@ -1591,6 +1614,9 @@ section h5{
     }
 
     /*首页*/
+    .home .section1 .bottom{
+        height: auto;
+    }
     .home .section1 .left{
         width: 100%;
     }
