@@ -287,6 +287,40 @@ footer .copyright .right{
 .float-left{
     float: left;
 }
+footer .bottom-tab{
+    position: fixed;
+    height: 48px;
+    width: 100%;
+    bottom: 0;
+    background: #d43142;
+}
+footer .bottom-tab ul li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    top: 0 !important;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    flex-direction: column;
+}
+footer .bottom-tab ul li i{
+    font-size: 14px;
+    color: #fff;
+}
+footer .bottom-tab ul li p{
+    line-height: 20px;
+}
+footer .bottom-tab ul li a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 /*-----------conmon*/
 .container{
@@ -403,6 +437,14 @@ footer .copyright .right{
     margin-bottom: 20px;
     text-indent: 30px;
 }
+.commonListDetail .bottom dl{
+    text-indent: 30px;
+}
+.commonListDetail .bottom dl dt{
+    line-height: 30px;
+    color: #666;
+}
+
 
 .commonListDetail .bottom .img{
     text-align: center;
@@ -1549,6 +1591,9 @@ section h5{
     .container{
         min-width: 1170px;
     }
+    footer .bottom-tab{
+        display: none;
+    }
 }
 @media screen and (max-width: 768px) {
     .navbar-toggle{
@@ -1562,6 +1607,13 @@ section h5{
     }
     .nav-mobile{
         display: block;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        background: #fff;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
     .nav-pc{
         display: none;
