@@ -4,6 +4,7 @@ $(function () {
   $(".content section").eq(0).addClass("animate");
   $(window).scroll(function(){
     winScrollTop=$(this).scrollTop();
+
     $(".content section").each(function(){
       currentScrollTop=$(this).offset().top;
       if(winHeight+winScrollTop >= currentScrollTop){
@@ -64,9 +65,18 @@ $(function () {
     });
   }
 
-  $('.home .section1 .top ul li').hover(function () {
+
+  /*服务项目第一种效果*/
+  $('.home .section1 .left ul li').hover(function () {
+    const _index = $(this).index();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.home .section1 .right .list .item').eq(_index).addClass('active').siblings().removeClass('active');
+  })
+
+  /*服务项目第二种效果*/
+  /*$('.home .section1 .top ul li').hover(function () {
     const _index = $(this).index();
     $(this).addClass('active').siblings().removeClass('active');
     $('.home .section1 .bottom ul li').eq(_index).addClass('active').siblings().removeClass('active');
-  })
+  })*/
 });

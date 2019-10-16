@@ -128,8 +128,14 @@ a:active, a:hover, a:visited, a:link{
 
 .nav-pc .menu {
     height: 70px;
-    position: sticky;
-    top: 100px;
+}
+.nav-pc .menu.fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 .nav-pc .menu ul {
     height: 70px;
@@ -583,7 +589,7 @@ section h2 i.line{
     display: block;
     width: 30px;
     height: 1px;
-    background: #f0f2f5;
+    background: #999;
     float: left;
     margin-right: 2px;
 }
@@ -653,6 +659,7 @@ section h5{
     background: #f5f5f5;
     padding: 0;
     border-bottom: 5px solid #d43142;
+    animation: moveFromLeftToRight 1s forwards;
 }
 
 .home .section1 .left .title{
@@ -668,21 +675,25 @@ section h5{
     height: 50px;
     width: 200px;
     margin: 0 auto;
-    border-bottom: 1px solid #f0f2f5;
+    border-bottom: 1px solid #e9e9e9;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all ease-in-out .3s;
+    cursor: pointer;
 }
 
 .home .section1 .left ul li.active{
     color: #d43142;
+    border-bottom-color: #d43142;
 }
 
 .home .section1 .left ul li .glyphicon{
     font-size: 16px;
+    transition: all ease-in-out .3s;
 }
 
-.home .section1 .left .bottom{
+.home .section1 .left .bottom2{
     height: 60px;
     line-height: 60px;
     display: flex;
@@ -693,7 +704,7 @@ section h5{
     font-weight: bold;
 }
 
-.home .section1 .left .bottom .circle{
+.home .section1 .left .bottom2 .circle{
     display: flex;
     width: 30px;
     height: 30px;
@@ -704,9 +715,10 @@ section h5{
     margin-right: 8px;
 }
 
-.home .section1 .left .bottom .circle i {
+.home .section1 .left .bottom2 .circle i {
     color: #fff;
     font-size: 16px;
+    margin: 0;
 }
 
 .home .section1 .right {
@@ -733,8 +745,17 @@ section h5{
     transition: all ease-in-out .3s;
 }
 
-.home .section1 .right ul li img:hover{
+.home .section1 .right ul li:hover img{
     transform: scale(1.1);
+}
+
+.home .section1 .right ul li a{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
 }
 
 .home .section1 .right ul li p{
@@ -746,6 +767,16 @@ section h5{
     background: rgba(145, 145, 145, 0.62);
     color: #fff;
     text-align: center;
+}
+
+.home .section1 .right .list .item{
+    display: none;
+    transition: all ease-in-out .3s;
+    animation: moveFromRightToLeft 1s forwards;
+}
+
+.home .section1 .right .list .item.active{
+    display: block;
 }
 
 .home .section1 div.bg{
@@ -1018,6 +1049,42 @@ section h5{
     max-width: 100%;
 }
 
+.home .section3 .content{
+    height: 100px;
+    overflow: hidden;
+}
+
+.home .section3 .content ul{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    animation:myfirst 120s infinite linear;
+    animation-direction:alternate;
+    animation-play-state: running;
+
+    /* Safari 和 Chrome */
+    -webkit-animation:myfirst 120s infinite linear;
+    -webkit-animation-direction:alternate;
+    -webkit-animation-play-state: running;
+}
+
+.home .section3 .content ul:hover{
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+.home .section3 .content ul li{
+    margin-right: 50px;
+}
+
+@keyframes myfirst
+{
+    0%   {left:0}
+
+    50%  {left: -3000px;}
+
+    100% {left:0}
+}
+
 .home .section4 ul{
 
 }
@@ -1120,31 +1187,108 @@ section h5{
     -webkit-box-orient: vertical;
 }
 
-.home .section5 .link{
+.home section .link{
     text-align: center;
+    margin-top: 30px;
 }
 
-.home .section5 .link a{
+.home section .link a{
     background: #fff;
     border: 1px solid #ddd;
     color: #333;
     border-radius: 2px;
     transition: all ease-in-out .3s;
+    display: inline-block;
 }
 
-.home .section5 .link a i{
+.home section .link a i{
     color: #333;
     transition: all ease-in-out .3s;
     margin-left: 10px;
 }
-.home .section5 .link a:hover{
+.home section .link a:hover{
     background: #d43142;
     color: #fff;
 }
-.home .section5 .link a:hover i{
+.home section .link a:hover i{
     color: #fff;
 }
 
+.home .section6 .content{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.home .section6 .content .left{
+    width: 400px;
+}
+
+.home .section6 .content .tag{
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 15px;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.home .section6 .content .tag span{
+    font-size: 24px;
+    color: #d43142;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.home .section6 .content .text{
+    margin: 20px;
+    width: 300px;
+    color: #999;
+    line-height: 20px;
+}
+
+.home .section6 .content .right .tag{
+    justify-content: flex-end;
+}
+
+.home .section6 .content .right .tag span{
+    margin-left: 10px;
+}
+
+.home .section6 .content .middle{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .section6 .content .right{
+    width: 400px;
+}
+
+.home .section6 .content .pic{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home .section6 .content .right .pic{
+    margin-bottom: 20px;
+}
+
+.home .section6 .content .pic img{
+    width: 190px;
+    height: 140px;
+    border-radius: 5px;
+}
+
+span.red{
+    color: #d43142;
+    margin: 0 3px;
+}
     /*产品展示*/
 .product .banner{
     height: 400px;
@@ -1737,6 +1881,22 @@ section h5{
     .home .section2 .swiper-slide a{
         padding-top: 20px;
     }
+    .home .section6 .content{
+        flex-direction: column;
+    }
+    .home .section6 .content .left,.home .section6 .content .right{
+        width: 100%;
+    }
+    .home .section6 .content .middle{
+        display: none;
+    }
+    .home .section6 .content .pic{
+        flex-direction: column;
+        align-items: center;
+    }
+    .home .section6 .content .pic img{
+        margin-bottom: 20px;
+    }
     .product-detail .recommend .container .left{
         padding: 0;
         margin-top: 30px;
@@ -1843,6 +2003,27 @@ section h5{
     animation-play-state:running;
 }
 
+.home .section6 .left{
+    opacity:0;
+    animation:moveFromLeftToRightStrong 1s forwards;
+    animation-play-state:paused;
+}
+
+.home .section6 .middle{
+    animation:moveFromBottomToTopStrong 1s forwards;
+    animation-play-state:paused;
+}
+
+.home .section6 .right{
+    opacity:0;
+    animation:moveFromRightToLeftStrong 1s forwards;
+    animation-play-state:paused;
+}
+
+.home .section6.animate .left, .home .section6.animate .middle, .home .section6.animate .right{
+    animation-play-state:running;
+}
+
 .commonListStyle ul li{
     animation:moveFromBottomToTop 1s forwards;
     animation-play-state:paused;
@@ -1875,9 +2056,11 @@ section h5{
 @keyframes moveFromBottomToTop {
     from{
         transform: translateY(20px);
+        opacity: 0;
     }
     to{
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -1901,4 +2084,163 @@ section h5{
         transform: translateX(0);
         opacity: 1;
     }
+}
+@keyframes moveFromBottomToTopStrong {
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveFromRightToLeftStrong {
+    from{
+        transform: translateX(100px);
+        opacity: 0.5;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveFromLeftToRightStrong {
+    from{
+        transform: translateX(-100px);
+        opacity: 0.5;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/*悬浮按钮*/
+.fix-btn {
+    position: fixed;
+    bottom: 120px;
+    right: 10px;
+    z-index: 999;
+    color: #000;
+    border-color: #00c1e0;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    background: #fff;
+}
+
+.fix-btn .tels,
+.fix-btn .chats {
+    position: relative;
+    z-index: 99;
+    color: #fff;
+}
+
+.fix-btn .parent-box:hover .hover-box {
+    display: block;
+}
+
+.fix-btn span {
+    display: block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #00c1e0;
+    font-size: 11px;
+    text-indent: -9999px;
+    background: url("/haowen_imgs/imgs/home/fix_btn2.png") no-repeat;
+}
+
+.fix-btn .talk-btn,
+.fix-btn .tel-btn,
+.fix-btn .gotop-btn {
+    padding: 5px 8px;
+    line-height: 16px;
+}
+
+.fix-btn .gotop-btn {
+    cursor: pointer;
+}
+
+.fix-btn .talk-btn {
+    background-position: 0 0;
+}
+
+.fix-btn .tel-btn {
+    background-position: -60px 0;
+}
+
+.fix-btn .chat-btn {
+    line-height: 60px;
+    background-position: -120px 0;
+}
+
+.fix-btn .hover-span i {
+    display: block;
+    width: 40px;
+    margin: 8px auto 0;
+}
+
+.fix-btn .gotop-btn {
+    background-position: -180px 0;
+}
+
+.fix-btn .hover-box {
+    width: 150px;
+}
+
+.tels .hover-box {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 80px;
+    padding-bottom: 10px;
+    color: #fff;
+    background: #00c1e0;
+
+}
+
+.tels .hover-box .tel-one {
+    padding: 10px 8px 0 8px;
+    overflow: hidden;
+}
+
+
+.tel-one .right-text {
+    float: left;
+    padding: 6px;
+    width: 108px;
+    font-size: 14px;
+}
+
+.tel-one .right-text em {
+    display: block;
+    line-height: 20px;
+    padding-bottom: 6px;
+
+}
+
+
+.chats .hover-box {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 80px;
+    padding: 10px 12px 0 12px;
+    background: #00c1e0;
+}
+
+.hover-box .chat-one h5 {
+    padding: 6px 0 12px 0;
+    text-align: center;
+    line-height: 14px;
+}
+
+.fix-btn .changebg {
+    text-indent: 0;
+    color: #fff;
+    background: #00c1e0;
 }
