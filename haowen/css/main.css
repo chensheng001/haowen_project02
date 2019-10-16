@@ -1741,6 +1741,9 @@ span.red{
     }
 }
 @media screen and (max-width: 768px) {
+    .fix-btn{
+        display: none;
+    }
     .navbar-toggle{
         margin-right: 0;
     }
