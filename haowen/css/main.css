@@ -453,11 +453,10 @@ footer .bottom-tab ul li a{
 }
 
 
-.commonListDetail .bottom .img{
-    text-align: center;
-}
 .commonListDetail .bottom img{
     max-width: 100%;
+    display: block;
+    margin: 20px auto 0;
 }
 
 .commonListDetail .btn-group{
