@@ -425,6 +425,10 @@ footer .bottom-tab ul li a{
     border-bottom: 1px solid #f0f2f5;
 }
 
+.commonListDetail .text {
+    display: none;
+}
+
 .commonListDetail .top h2{
     font-size: 20px;
     color: #37474f;
@@ -1309,7 +1313,7 @@ span.red{
     display: block;
 }
 .display_hide{
-    display: none;
+    display: none !important;
 }
 .product .top_nav span {
     width: 12.5%;
@@ -1572,10 +1576,27 @@ span.red{
 .case .content .right ul.list li{
     padding: 30px 0;
     border-bottom: 1px solid #f0f2f5;
+    display: flex;
+    gap: 20px;
+}
+
+.case .content .right ul.list li .left {
+    width: 160px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.case .content .right ul.list li .des {
+    flex: 1;
+}
+
+.case .content .right ul.list li .left img {
+    max-width: 100%;
+    max-height: 120px;
 }
 
 .case .content .right ul.list li:before{
-    display: block;
+    display: none;
     float: left;
     content: '';
     width: 160px;
@@ -1674,8 +1695,17 @@ span.red{
     font-weight: bold;
 }
 
-.case .content .right ul.list li h4 a:hover{
+.case .content .right ul.list li .left img {
+    transition: all ease-in-out .3s;
+}
+
+.case .content .right ul.list li:hover .left img {
+    transform: scale(1.05);
+}
+
+.case .content .right ul.list li:hover h4 a{
     color: #d43142;
+    text-decoration: underline;
 }
 
 .case .content .right ul.list li p {
@@ -1686,6 +1716,7 @@ span.red{
 
 .case .content .right ul.list li .text{
     padding-left: 180px;
+    display: none;
 }
 
 .case .content .right ul.list li .text span,i{
@@ -2037,6 +2068,33 @@ span.red{
     .contact h1{
         margin: 20px 0;
         text-align: center;
+    }
+    footer .copyright {
+        padding-bottom: 50px;
+    }
+    .case .content .right ul.list li {
+        flex-direction: column;
+    }
+    .case .content .right ul.list li .left {
+        width: 100%;
+        height: auto;
+    }
+    .case .content .right ul.list li .left img {
+        max-height: 100%;
+        width: 100%;
+    }
+    .home .banner .swiper-container {
+        height: 300px;
+        margin-top: 50px;
+    }
+    .home .banner .swiper-slide:nth-child(1){
+        background-image: url("/haowen_imgs/imgs/home-banner-item1-m.png");
+    }
+    .home .banner .swiper-slide:nth-child(2){
+        background-image: url("/haowen_imgs/imgs/home-banner-item2-m.png");
+    }
+    .home .banner .swiper-slide {
+        background-size: cover !important;
     }
 }
 

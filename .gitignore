@@ -34,7 +34,6 @@ yarn-error.log
 testem.log
 /typings
 
-/haowen_imgs
 
 # System Files
 .DS_Store
